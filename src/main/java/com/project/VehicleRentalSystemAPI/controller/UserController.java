@@ -8,8 +8,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.project.VehicleRentalSystemAPI.dto.UserRegisterRequestDTO;
+import com.project.VehicleRentalSystemAPI.dto.UserRegisterResponseDTO;
 import com.project.VehicleRentalSystemAPI.service.UserService;
 
+import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 
 // User controller for handling user registration and login
@@ -21,8 +23,12 @@ public class UserController {
 
    // registers new user
    @PostMapping("/register")
-   public ResponseEntity<String> register(@RequestBody UserRegisterRequestDTO userRegisterRequestDTO) {
-      userService.registerUser(userRegisterRequestDTO);
-      return new ResponseEntity<>("User registered successfully", HttpStatus.CREATED);
+   public ResponseEntity<UserRegisterResponseDTO> register(
+         @RequestBody @Valid UserRegisterRequestDTO userRegisterRequestDTO) {
+      UserRegisterResponseDTO userRegisterResponse = userService.registerUser(userRegisterRequestDTO);
+
+      // returns the user register response dto as response with status code 201
+      // (Created)
+      return new ResponseEntity<>(userRegisterResponse, HttpStatus.CREATED);
    }
 }
