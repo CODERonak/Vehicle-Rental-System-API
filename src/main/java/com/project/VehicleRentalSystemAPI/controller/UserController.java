@@ -12,12 +12,14 @@ import com.project.VehicleRentalSystemAPI.service.UserService;
 
 import lombok.AllArgsConstructor;
 
+// User controller for handling user registration and login
 @RestController
 @RequestMapping("/api/auth")
 @AllArgsConstructor
 public class UserController {
    private final UserService userService;
 
+   // registers new user
    @PostMapping("/register")
    public ResponseEntity<String> register(@RequestBody UserRegisterRequestDTO userRegisterRequestDTO) {
       userService.registerUser(userRegisterRequestDTO);

@@ -12,6 +12,7 @@ import com.project.VehicleRentalSystemAPI.model.entity.Users;
 
 import lombok.AllArgsConstructor;
 
+// UserDetails implementation for Spring Security
 @AllArgsConstructor // Generates a constructor with the field user
 public class MyUserDetails implements UserDetails {
 

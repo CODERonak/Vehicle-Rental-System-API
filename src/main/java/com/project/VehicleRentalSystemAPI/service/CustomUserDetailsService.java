@@ -11,6 +11,7 @@ import com.project.VehicleRentalSystemAPI.repository.UserRepository;
 import lombok.AllArgsConstructor;
 
 // creates a custom user details service
+// This service is used to load user details from the database
 @Service
 @AllArgsConstructor
 public class CustomUserDetailsService implements UserDetailsService {

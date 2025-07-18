@@ -19,6 +19,8 @@ import lombok.AllArgsConstructor;
 @EnableWebSecurity
 @AllArgsConstructor
 public class SecurityConfig {
+
+    // security filter chain for configuring security
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 
@@ -39,6 +41,7 @@ public class SecurityConfig {
 
     private final CustomUserDetailsService userDetailsService;
 
+    // authentication manager for handling authentication
     @Bean
     public AuthenticationManager authenticationManager() {
         DaoAuthenticationProvider authenticationProvider = new DaoAuthenticationProvider(userDetailsService);
