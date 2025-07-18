@@ -22,6 +22,5 @@ public class UserRegisterRequestDTO {
     @Size(min = 8)
     private String password;
 
-    @NotNull
     private Role role;
 }

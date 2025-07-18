@@ -27,7 +27,7 @@ public class Users {
     private String password;
 
     @Enumerated(EnumType.STRING) // Maps the enum to a string in the database
-    @Column(nullable = false) // Cannot be null
+    @Column(nullable = true) // Can be null
     private Role role;
 
     @Column(nullable = false) // IsActive cannot be null
