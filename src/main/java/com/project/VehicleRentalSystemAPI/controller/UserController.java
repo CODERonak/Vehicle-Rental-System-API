@@ -2,13 +2,9 @@ package com.project.VehicleRentalSystemAPI.controller;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
-import com.project.VehicleRentalSystemAPI.dto.UserRegisterRequestDTO;
-import com.project.VehicleRentalSystemAPI.dto.UserRegisterResponseDTO;
+import com.project.VehicleRentalSystemAPI.dto.*;
 import com.project.VehicleRentalSystemAPI.service.UserService;
 
 import jakarta.validation.Valid;
@@ -30,5 +26,12 @@ public class UserController {
       // returns the user register response dto as response with status code 201
       // (Created)
       return new ResponseEntity<>(userRegisterResponse, HttpStatus.CREATED);
+   }
+
+   @PostMapping("login")
+   public ResponseEntity<UserLoginResponseDTO> login(
+         @RequestBody @Valid UserLoginRequestDTO userLoginRequestDTO) {
+      UserLoginResponseDTO userLoginResponse = userService.loginUser(userLoginRequestDTO);
+      return new ResponseEntity<>(userLoginResponse, HttpStatus.OK);
    }
 }
