@@ -1,7 +1,3 @@
-Here's the `README.md` for your Vehicle Rental System API, formatted similarly to your example:
-
------
-
 # 🚗 Vehicle Rental System API
 
 **NOTE: This API is still under development.**
@@ -76,8 +72,11 @@ The API uses **JWT (JSON Web Tokens)** for stateless authentication and **Role-B
 
 ### Public Endpoints
 
-  * `POST /auth/register` - Register a new user.
-  * `POST /auth/login` - Authenticate user and receive JWT.
+  **Available**
+  * `POST api/auth/register` - Register a new user.
+  * `POST api/auth/login` - Authenticate user and receive JWT.
+
+ **Not avialable**
   * `GET /vehicles` - Browse available vehicles (limited details).
   * `GET /categories` - View vehicle categories.
   * `GET /vehicles/available` - Search for available vehicles by date range and category.
@@ -94,27 +93,28 @@ Here's a summary of the main API endpoints.
 
 ### Authentication
 
-  * `POST /auth/register` - Register a new user (`CUSTOMER` by default).
-  * `POST /auth/login` - Authenticate user and receive JWT.
+  * `POST api/auth/register` - Register a new user (`CUSTOMER` by default).
+  * `POST api/auth/login` - Authenticate user and receive JWT.
 
+ **These endpoints are not yet available**
 ### Vehicle Management (ADMIN, AGENT)
 
-  * `POST /vehicles` - Add a new vehicle.
-  * `PUT /vehicles/{id}` - Update an existing vehicle.
-  * `PUT /vehicles/{id}/status` - Change a vehicle's availability status.
-  * `GET /vehicles` - Get a list of all vehicles.
-  * `GET /vehicles/available?start=yyyy-MM-dd&end=yyyy-MM-dd&category=SUV` - Find available vehicles within a date range and optionally by category.
+  * `POST api/vehicles` - Add a new vehicle.
+  * `PUT api/vehicles/{id}` - Update an existing vehicle.
+  * `PUT api/vehicles/{id}/status` - Change a vehicle's availability status.
+  * `GET api/vehicles` - Get a list of all vehicles.
+  * `GET api/vehicles/available?start=yyyy-MM-dd&end=yyyy-MM-dd&category=SUV` - Find available vehicles within a date range and optionally by category.
 
 ### Vehicle Category Management (ADMIN)
 
-  * `POST /categories` - Create a new vehicle category.
-  * `GET /categories` - Get a list of all vehicle categories.
+  * `POST api/categories` - Create a new vehicle category.
+  * `GET api/categories` - Get a list of all vehicle categories.
 
 ### Booking Management (CUSTOMER, AGENT, ADMIN)
 
-  * `POST /bookings` (CUSTOMER) - Create a new booking for a vehicle.
-  * `GET /bookings/user/{userId}` (CUSTOMER, ADMIN, AGENT) - Get bookings for a specific user.
-  * `PUT /bookings/{bookingId}/cancel` (CUSTOMER, ADMIN, AGENT) - Cancel an existing booking.
-  * `PUT /bookings/{bookingId}/complete` (AGENT, ADMIN) - Mark a booking as completed (e.g., after vehicle return).
+  * `POST api/bookings` (CUSTOMER) - Create a new booking for a vehicle.
+  * `GET api/bookings/user/{userId}` (CUSTOMER, ADMIN, AGENT) - Get bookings for a specific user.
+  * `PUT api/bookings/{bookingId}/cancel` (CUSTOMER, ADMIN, AGENT) - Cancel an existing booking.
+  * `PUT api/bookings/{bookingId}/complete` (AGENT, ADMIN) - Mark a booking as completed (e.g., after vehicle return).
 
 -----
