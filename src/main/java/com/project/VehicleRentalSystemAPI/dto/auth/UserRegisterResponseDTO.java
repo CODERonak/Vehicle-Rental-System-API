@@ -1,4 +1,4 @@
-package com.project.VehicleRentalSystemAPI.dto;
+package com.project.VehicleRentalSystemAPI.dto.auth;
 
 import com.project.VehicleRentalSystemAPI.model.enums.Enums.Role;
 import lombok.*;

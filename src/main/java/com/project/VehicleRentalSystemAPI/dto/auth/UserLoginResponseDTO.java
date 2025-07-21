@@ -1,4 +1,4 @@
-package com.project.VehicleRentalSystemAPI.dto;
+package com.project.VehicleRentalSystemAPI.dto.auth;
 
 import lombok.*;
 

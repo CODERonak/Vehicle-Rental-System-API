@@ -8,10 +8,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import com.project.VehicleRentalSystemAPI.dto.UserLoginRequestDTO;
-import com.project.VehicleRentalSystemAPI.dto.UserLoginResponseDTO;
-import com.project.VehicleRentalSystemAPI.dto.UserRegisterRequestDTO;
-import com.project.VehicleRentalSystemAPI.dto.UserRegisterResponseDTO;
+import com.project.VehicleRentalSystemAPI.dto.auth.*;
 import com.project.VehicleRentalSystemAPI.exceptions.custom.*;
 import com.project.VehicleRentalSystemAPI.jwt.JWTUtil;
 import com.project.VehicleRentalSystemAPI.mappers.UserMapper;

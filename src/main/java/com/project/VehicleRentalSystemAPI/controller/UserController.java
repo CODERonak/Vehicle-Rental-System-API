@@ -4,7 +4,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import com.project.VehicleRentalSystemAPI.dto.*;
+import com.project.VehicleRentalSystemAPI.dto.auth.*;
 import com.project.VehicleRentalSystemAPI.service.UserService;
 
 import jakarta.validation.Valid;

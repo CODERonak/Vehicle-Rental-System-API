@@ -3,9 +3,7 @@ package com.project.VehicleRentalSystemAPI.mappers;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 
-import com.project.VehicleRentalSystemAPI.dto.UserLoginResponseDTO;
-import com.project.VehicleRentalSystemAPI.dto.UserRegisterRequestDTO;
-import com.project.VehicleRentalSystemAPI.dto.UserRegisterResponseDTO;
+import com.project.VehicleRentalSystemAPI.dto.auth.*;
 import com.project.VehicleRentalSystemAPI.model.entity.Users;
 
 // User mapper to map between Users and UserDTO's
