@@ -13,6 +13,7 @@ public class VehicleResponseDTO {
     private String brand;
     private String model;
     private Long vehicleCategoryId;
+    private String vehicleCategoryName;
     private int year;
     private String licensePlate;
     private int mileage;
