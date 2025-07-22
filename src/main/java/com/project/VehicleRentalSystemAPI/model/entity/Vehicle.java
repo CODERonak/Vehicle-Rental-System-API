@@ -8,7 +8,7 @@ import lombok.*;
 @Entity // Marks this class as an entity for JPA
 @Data // Generates getters, setters, toString, equals, hashCode
 @AllArgsConstructor // Generates a constructor with all fields
-@Builder // Generates a builder pattern for object creation
+@Builder(toBuilder = true) // Generates a builder pattern for object creation
 @NoArgsConstructor // Generates a no-argument constructor, required by JPA
 @Table(name = "vehicles") // Maps to the 'vehicle_categories' table
 public class Vehicle {
