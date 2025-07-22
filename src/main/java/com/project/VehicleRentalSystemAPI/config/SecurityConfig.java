@@ -33,7 +33,7 @@ public class SecurityConfig {
         // authorizes the api endpoints
         http.authorizeHttpRequests(requests -> requests
                 // public endpoints which requires no authentication
-                .requestMatchers("/api/auth/**", "/test", "/api/categories").permitAll()
+                .requestMatchers("/api/auth/**", "/test", "/api/categories", "/api/vehicles").permitAll()
                 .anyRequest().authenticated())
 
                 // enables basic authentication
