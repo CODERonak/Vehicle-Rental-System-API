@@ -6,6 +6,7 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.ProviderManager;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.Customizer;
+import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -21,6 +22,7 @@ import lombok.AllArgsConstructor;
 
 @Configuration
 @EnableWebSecurity
+@EnableMethodSecurity
 @AllArgsConstructor
 public class SecurityConfig {
 
@@ -31,7 +33,7 @@ public class SecurityConfig {
         // authorizes the api endpoints
         http.authorizeHttpRequests(requests -> requests
                 // public endpoints which requires no authentication
-                .requestMatchers("/api/auth/**", "/test").permitAll()
+                .requestMatchers("/api/auth/**", "/test", "/api/categories").permitAll()
                 .anyRequest().authenticated())
 
                 // enables basic authentication
