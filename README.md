@@ -75,11 +75,9 @@ The API uses **JWT (JSON Web Tokens)** for stateless authentication and **Role-B
   **Available**
   * `POST api/auth/register` - Register a new user.
   * `POST api/auth/login` - Authenticate user and receive JWT.
-
- **Not avialable**
-  * `GET /vehicles` - Browse available vehicles (limited details).
-  * `GET /categories` - View vehicle categories.
-  * `GET /vehicles/available` - Search for available vehicles by date range and category.
+  * `GET api/vehicles` - Browse available vehicles (limited details).
+  * `GET api/categories` - View vehicle categories.
+  * `GET api/vehicles/available` - Search for available vehicles by date range and category.
 
 ### Protected Endpoints
 
@@ -103,7 +101,6 @@ Here's a summary of the main API endpoints.
   * `PUT api/vehicles/{id}` - Update an existing vehicle.
   * `PUT api/vehicles/{id}/status` - Change a vehicle's availability status.
   * `GET api/vehicles` - Get a list of all vehicles.
-  * `GET api/vehicles/available?start=yyyy-MM-dd&end=yyyy-MM-dd&category=SUV` - Find available vehicles within a date range and optionally by category.
 
 ### Vehicle Category Management (ADMIN)
 
@@ -113,8 +110,8 @@ Here's a summary of the main API endpoints.
 ### Booking Management (CUSTOMER, AGENT, ADMIN)
 
   * `POST api/bookings` (CUSTOMER) - Create a new booking for a vehicle.
-  * `GET api/bookings/user/{userId}` (CUSTOMER, ADMIN, AGENT) - Get bookings for a specific user.
-  * `PUT api/bookings/{bookingId}/cancel` (CUSTOMER, ADMIN, AGENT) - Cancel an existing booking.
-  * `PUT api/bookings/{bookingId}/complete` (AGENT, ADMIN) - Mark a booking as completed (e.g., after vehicle return).
+  * `PUT api/bookings/{id}` (ADMIN) - updates the booking status
+  * `DELETE api/bookings/{id}` (CUSTOMER) - cancels the booking 
+ 
 
 -----
