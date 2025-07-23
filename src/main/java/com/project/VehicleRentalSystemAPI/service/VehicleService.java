@@ -8,6 +8,7 @@ import com.project.VehicleRentalSystemAPI.dto.vehicle.*;
 import com.project.VehicleRentalSystemAPI.mappers.VehicleMapper;
 import com.project.VehicleRentalSystemAPI.model.entity.Vehicle;
 import com.project.VehicleRentalSystemAPI.model.entity.VehicleCategory;
+import com.project.VehicleRentalSystemAPI.model.enums.Enums.VehicleStatus;
 import com.project.VehicleRentalSystemAPI.repository.VehicleCategoryRepository;
 import com.project.VehicleRentalSystemAPI.repository.VehicleRepository;
 
@@ -56,6 +57,14 @@ public class VehicleService {
     // Method to get all vehicles from the database
     public List<VehicleResponseDTO> getAllVehicles() {
         return vehicleRepository.findAll()
+                .stream()
+                .map(mapper::toResponseDto)
+                .toList();
+    }
+
+    // method to get vehicles according to their status
+    public List<VehicleResponseDTO> getVehiclesByStatus(VehicleStatus status) {
+        return vehicleRepository.findByStatus(status.AVAILABLE)
                 .stream()
                 .map(mapper::toResponseDto)
                 .toList();

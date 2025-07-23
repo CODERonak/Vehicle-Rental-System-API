@@ -8,6 +8,7 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import com.project.VehicleRentalSystemAPI.dto.vehicle.*;
+import com.project.VehicleRentalSystemAPI.model.enums.Enums.VehicleStatus;
 import com.project.VehicleRentalSystemAPI.service.VehicleService;
 
 import jakarta.validation.Valid;
@@ -36,8 +37,14 @@ public class VehicleController {
 
     @GetMapping // Endpoint for getting all vehicles
     public ResponseEntity<List<VehicleResponseDTO>> getAllVehicles() {
-        List<VehicleResponseDTO> categories = vehicleService.getAllVehicles();
-        return new ResponseEntity<>(categories, HttpStatus.OK);
+        List<VehicleResponseDTO> vehicles = vehicleService.getAllVehicles();
+        return new ResponseEntity<>(vehicles, HttpStatus.OK);
+    }
+
+    @GetMapping("/available") // Endpoint for getting all vehicles with status available
+    public ResponseEntity<List<VehicleResponseDTO>> getVehiclesByStatus(VehicleStatus status) {
+        List<VehicleResponseDTO> available = vehicleService.getVehiclesByStatus(status);
+        return new ResponseEntity<>(available, HttpStatus.OK);
     }
 
 }
