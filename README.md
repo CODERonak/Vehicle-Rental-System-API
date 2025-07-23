@@ -1,7 +1,5 @@
 # 🚗 Vehicle Rental System API
 
-**NOTE: This API is still under development.**
-
 -----
 
 ## 🎯 Objective
@@ -71,8 +69,6 @@ src/
 The API uses **JWT (JSON Web Tokens)** for stateless authentication and **Role-Based Access Control (RBAC)**.
 
 ### Public Endpoints
-
-  **Available**
   * `POST api/auth/register` - Register a new user.
   * `POST api/auth/login` - Authenticate user and receive JWT.
   * `GET api/vehicles` - Browse available vehicles (limited details).
@@ -91,15 +87,13 @@ Here's a summary of the main API endpoints.
 
 ### Authentication
 
-  * `POST api/auth/register` - Register a new user (`CUSTOMER` by default).
+  * `POST api/auth/register` - Register a new user
   * `POST api/auth/login` - Authenticate user and receive JWT.
 
- **These endpoints are not yet available**
 ### Vehicle Management (ADMIN, AGENT)
 
   * `POST api/vehicles` - Add a new vehicle.
   * `PUT api/vehicles/{id}` - Update an existing vehicle.
-  * `PUT api/vehicles/{id}/status` - Change a vehicle's availability status.
   * `GET api/vehicles` - Get a list of all vehicles.
 
 ### Vehicle Category Management (ADMIN)
