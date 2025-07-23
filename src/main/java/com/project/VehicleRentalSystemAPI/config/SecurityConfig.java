@@ -34,6 +34,7 @@ public class SecurityConfig {
         http.authorizeHttpRequests(requests -> requests
                 // public endpoints which requires no authentication
                 .requestMatchers("/api/auth/**", "/test", "/api/categories", "/api/vehicles").permitAll()
+                .requestMatchers("/api/bookings/**").hasAnyAuthority("ROLE_CUSTOMER")
                 .anyRequest().authenticated())
 
                 // enables basic authentication
